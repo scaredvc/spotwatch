@@ -1,0 +1,62 @@
+# OPT-IN CANDIDATE: use replay first. Console notifications, separate DB.
+# Spot 2 lower boundary extended 20 px to include observed ground points.
+# Edge-clipped cars remain unknown; this is not a claim of full accuracy.
+# spotwatch config for the street cameras.
+# Polygon points are pixel coordinates (x, y) on that camera's 1280x720 frame.
+# Based on the mounted camera's existing calibration, with the candidate
+# spot 2 lower-boundary adjustment described above.
+
+settings:
+  notify_taken: true        # alert when a previously free spot is confirmed occupied
+  free_frames: 1            # N: free readings in a row before a spot counts as free
+  occupied_frames: 2        # occupied readings in a row before a spot counts as occupied (re-arms the alert)
+  stale_after_intervals: 3  # a camera reading older than this many intervals is ignored
+  occlusion_overlap: 0.4    # mask coverage for complete strong cars; box coverage for clipped/weak cars
+  min_confidence: 0.35      # YOLO detections at or above this count as cars
+  weak_confidence: 0.15     # weaker boxes sitting on a spot make it "unknown" instead of "free"
+  occupancy_mode: masks
+  max_align_shift_px: 25    # camera wobbles ~10-20px between snapshots: move spot outlines to follow it (0 = off)
+  model: yolo11s-seg.pt     # nano (yolo11n-seg) missed dark cars on the far curb in afternoon window haze
+  db_path: spotwatch-segmentation.db
+  blink_session_file: blink_session.json   # written by `python -m spotwatch.blink_setup`, gitignored
+  notifier: console          # console | discord (discord needs DISCORD_WEBHOOK_URL in .env)
+
+# Curb spots seen from front-camera. Rename them anytime; ids must match the polygon keys.
+spots:
+  - id: '1'
+    name: '1'
+  - id: '2'
+    name: '2'
+  - id: '3'
+    name: '3'
+  - id: '4'
+    name: '4'
+  - id: '5'
+    name: '5'
+  - id: '6'
+    name: '6'
+cameras:
+  # Second camera, not mounted yet. Uncomment once it's up and has polygons.
+  # - name: side-camera
+  #   source: blink
+  #   blink_camera: "Side Camera"   # exact name in the Blink app
+  #   interval_seconds: 60
+  #   active_hours:
+  #     start: "07:00"
+  #     end: "19:00"
+  #   polygons: {}
+
+  - name: front-camera
+    source: blink
+    blink_camera: "Front Camera"
+    interval_seconds: 60
+    active_hours:
+      start: "07:00"
+      end: "19:00"
+    polygons:
+      '2': [[868, 590], [898, 690], [1234, 596], [1189, 525], [868, 587]]
+      '4': [[492, 459], [485, 478], [236, 468], [246, 446], [493, 458]]
+      '5': [[620, 456], [612, 481], [844, 474], [843, 454], [621, 453], [620, 456]]
+      '6': [[849, 452], [853, 481], [1076, 453], [1055, 433], [852, 447]]
+      '3': [[20, 424], [14, 445], [223, 464], [230, 438], [22, 422]]
+      '1': [[50, 519], [6, 582], [131, 642], [321, 677], [484, 692], [528, 690], [528, 588], [53, 520]]

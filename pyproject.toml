@@ -1,0 +1,23 @@
+[project]
+name = "spotwatch"
+version = "0.1.0"
+description = "Notifies you when a watched street parking spot is free."
+requires-python = ">=3.11"
+license = "AGPL-3.0-only"
+# Keep in step with requirements.txt (pip users and CI install from that).
+dependencies = [
+    "pyyaml>=6.0",
+    "ruamel.yaml>=0.18",  # calibrate.py: edits config.yaml without losing comments
+    "numpy>=1.26",
+    "opencv-python>=4.9",
+    "ultralytics>=8.3",
+    "requests>=2.31",  # Discord webhook
+    # Unofficial Blink API. Pinned: we rely on its snapshot/refresh behavior (see spotwatch/blink_source.py).
+    "blinkpy==0.25.9",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

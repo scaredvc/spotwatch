@@ -1,0 +1,29 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# local data
+*.db
+*.db-journal
+recordings/
+runs/
+frames/
+
+# YOLO weights
+*.pt
+
+# secrets and sessions (Phase 2)
+.env
+blink_session.json
+secrets/
+
+# reference frames saved by calibrate.py (pictures of the street)
+calibration/
+
+# example pictures for showing the project (pictures of the street, keep out of git)
+showcase/
+
+# live frames annotated by `python -m spotwatch.check` (pictures of the street)
+check-*.jpg

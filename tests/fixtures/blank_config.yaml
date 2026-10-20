@@ -1,0 +1,50 @@
+# spotwatch config for the street cameras.
+# Polygon points are pixel coordinates (x, y) on that camera's 1280x720 frame.
+# Polygons are empty until calibrate.py is run on a daytime frame from the
+# camera's final position. Until then every spot reads "unknown".
+
+settings:
+  free_frames: 1            # N: free readings in a row before a spot counts as free
+  occupied_frames: 2        # occupied readings in a row before a spot counts as occupied (re-arms the alert)
+  stale_after_intervals: 3  # a camera reading older than this many intervals is ignored
+  occlusion_overlap: 0.4    # share of a spot polygon a vehicle box must cover to make it "unknown"
+  min_confidence: 0.35      # YOLO detections below this are ignored
+  model: yolo11n.pt
+  db_path: spotwatch.db
+  blink_session_file: blink_session.json   # written by `python -m spotwatch.blink_setup`, gitignored
+
+# About 7 curb spots. Rename these once you know which is which.
+spots:
+  - id: s1
+    name: Spot 1
+  - id: s2
+    name: Spot 2
+  - id: s3
+    name: Spot 3
+  - id: s4
+    name: Spot 4
+  - id: s5
+    name: Spot 5
+  - id: s6
+    name: Spot 6
+  - id: s7
+    name: Spot 7
+
+cameras:
+  - name: side-camera
+    source: blink
+    blink_camera: "Side Camera"   # exact name in the Blink app
+    interval_seconds: 60
+    active_hours:
+      start: "07:00"
+      end: "19:00"
+    polygons: {}
+
+  - name: front-camera
+    source: blink
+    blink_camera: "Front Camera"
+    interval_seconds: 60
+    active_hours:
+      start: "07:00"
+      end: "19:00"
+    polygons: {}

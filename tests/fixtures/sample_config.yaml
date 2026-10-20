@@ -1,0 +1,55 @@
+# spotwatch config.
+# Polygon points are pixel coordinates (x, y) on that camera's frame.
+# The coordinates below are placeholders. calibrate.py replaces them.
+
+settings:
+  free_frames: 1            # N: free readings in a row before a spot counts as free
+  occupied_frames: 2        # occupied readings in a row before a spot counts as occupied (re-arms the alert)
+  stale_after_intervals: 3  # a camera reading older than this many intervals is ignored
+  occlusion_overlap: 0.4    # share of a spot polygon a vehicle box must cover to make it "unknown"
+  min_confidence: 0.35      # YOLO detections below this are ignored
+  model: yolo11n.pt
+  db_path: spotwatch.db
+  blink_session_file: blink_session.json   # written by `python -m spotwatch.blink_setup`, gitignored
+
+spots:
+  - id: s1
+    name: In front of house
+  - id: s2
+    name: Next to hydrant
+  - id: s3
+    name: By the tree
+
+cameras:
+  - name: window-left
+    source: image_folder      # image_folder | video_file | blink | rtsp
+    path: samples/window-left
+    interval_seconds: 60
+    active_hours:
+      start: "07:00"
+      end: "20:00"
+    polygons:
+      s1: [[100, 400], [300, 400], [320, 480], [80, 480]]
+      s2: [[320, 380], [480, 380], [500, 450], [330, 450]]
+
+  - name: window-right
+    source: image_folder
+    path: samples/window-right
+    interval_seconds: 60
+    active_hours:
+      start: "07:00"
+      end: "20:00"
+    polygons:
+      s2: [[50, 420], [220, 420], [230, 480], [40, 480]]
+      s3: [[260, 400], [420, 400], [440, 470], [270, 470]]
+
+  # Real Blink camera. blink_camera is the exact name blink_setup prints.
+  # Polygons get drawn with calibrate.py.
+  # - name: window-xt2
+  #   source: blink
+  #   blink_camera: "Front Window"
+  #   interval_seconds: 60
+  #   active_hours:
+  #     start: "07:00"
+  #     end: "19:00"
+  #   polygons: {}

@@ -1,0 +1,60 @@
+# spotwatch example config. Copy to config.yaml and edit:  copy config.example.yaml config.yaml
+#
+# The values below are the ones the author runs on a Blink XT2 pointed at a street. Anything you leave out
+# falls back to a built-in default; where the example differs from the default, the comment says so.
+# Camera pixel coordinates are x (right), y (down) on the camera's own frame, 1280x720 for Blink.
+
+settings:
+  # --- how a spot's state changes ---
+  free_frames: 1             # free readings in a row before a spot counts as free (1 = alert on the first one)
+  occupied_frames: 2         # occupied readings in a row before it counts as taken again (also re-arms the alert)
+  stale_after_intervals: 3   # a camera reading older than this many polling intervals is ignored
+  notify_taken: false        # also alert when a free spot gets taken (default false: only "spot free")
+
+  # --- the car detector ---
+  model: yolo11s-seg.pt      # a YOLO model, downloaded on first run (default yolo11n.pt, boxes only).
+                             # yolo11n-seg.pt is faster but misses dark cars far away when the window hazes
+  occupancy_mode: masks      # masks | boxes (default boxes). masks needs a "-seg" model and is more accurate
+  min_confidence: 0.35       # detections at or above this count as cars
+  weak_confidence: 0.15      # weaker detections sitting on a spot make it "unknown" instead of "free"
+  occlusion_overlap: 0.4     # how much of a spot a car must cover (mask or box) to count it as taken
+  ground_tolerance_px: 10    # how far outside a spot outline a car's ground point may be and still count
+
+  # --- is this frame trustworthy? (a bad frame reads "unknown", which never alerts) ---
+  min_brightness: 40         # too dark, e.g. night behind glass
+  min_sharpness: 30          # too blurry
+  max_glare: 0.12            # share of blown-out pixels allowed, 0 to 1
+  max_shift_px: 10           # camera moved more than this versus the calibration frame: frame rejected
+  max_align_shift_px: 25     # >0: shifts up to this size are corrected by moving the spot outlines instead.
+                             # Blink cameras wobble 10-20 px between snapshots, so 25 is a good start. 0 = off
+  reference_dir: calibration # where `calibrate` saves the frame your outlines were drawn on
+
+  # --- files ---
+  db_path: spotwatch.db
+  blink_session_file: blink_session.json   # written by `python -m spotwatch.blink_setup`; never commit it
+
+  # --- alerts ---
+  notifier: console          # console | discord. discord needs DISCORD_WEBHOOK_URL in your .env file
+  # discord_webhook_env: DISCORD_WEBHOOK_URL   # change only if you named the variable differently
+
+# Your curb spots. The id must match the keys under `polygons` below; the name is what shows in alerts.
+spots:
+  - id: '1'
+    name: 'Front of the grey house'
+  - id: '2'
+    name: 'Next to the pole'
+
+cameras:
+  - name: my-camera                  # any label you like
+    source: blink                    # blink | image_folder | video_file (rtsp is not built yet)
+    blink_camera: "My Camera Name"   # exact camera name in the Blink app (blink sources only)
+    interval_seconds: 60             # how often to take a picture
+    active_hours:                    # optional: only watch between these times (a window may cross midnight)
+      start: "07:00"
+      end: "19:00"
+    # Outline the patch of ROAD where a parked car's tires would sit, not the car body.
+    # Don't write these by hand: run  python -m spotwatch.calibrate --camera my-camera
+    # and click the corners; it saves them here. The numbers below are just placeholders.
+    polygons:
+      '1': [[100, 450], [100, 480], [400, 480], [400, 450]]
+      '2': [[620, 456], [612, 481], [844, 474], [843, 454]]
