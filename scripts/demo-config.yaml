@@ -1,0 +1,42 @@
+# Config for the README demo (scripts/render_demo.py). Not a config for your street.
+#
+# Clip: Pexels video 5332686, "Time-Lapse Video of a Street from Nighttime to Daytime"
+# https://www.pexels.com/video/time-lapse-video-of-a-street-from-nighttime-to-daytime-5332686/
+# The spot outlines were drawn on its 2048x1080 rendition; render_demo.py scales them for other sizes.
+# Detection and quality settings are the ones in config.example.yaml.
+
+settings:
+  free_frames: 1
+  occupied_frames: 2
+  stale_after_intervals: 3
+  model: yolo11s-seg.pt
+  occupancy_mode: masks
+  min_confidence: 0.35
+  weak_confidence: 0.15
+  occlusion_overlap: 0.4
+  ground_tolerance_px: 10
+  min_brightness: 40
+  min_sharpness: 30
+  max_glare: 0.12
+  max_shift_px: 10
+  max_align_shift_px: 25
+  notifier: console
+
+spots:
+  - id: 'A'
+    name: 'Near curb, by the pole'
+  - id: 'B'
+    name: 'Near curb, by the fence'
+
+cameras:
+  - name: demo
+    source: video_file
+    path: pexels-5332686.mp4    # replaced by render_demo.py --video
+    frame_size: [2048, 1080]    # the frame the outlines below were drawn on
+    display_crop: [700, 560, 2048, 1080]   # the part of the frame shown in the GIF (render_demo.py only)
+    interval_seconds: 60
+    # Strips of road along the near curb where a parked car's tires sit. Spot A is
+    # outlined only where it's visible: the roof in the foreground hides its left end.
+    polygons:
+      'A': [[1625, 988], [1860, 1010], [1860, 1062], [1690, 1060]]
+      'B': [[830, 850], [1010, 868], [1012, 898], [828, 880]]
