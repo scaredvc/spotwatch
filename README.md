@@ -31,6 +31,9 @@ trusted, because a wrong "spot is free" sends you outside for nothing. When in d
 | Two cameras can see the same spot. | Stale and blocked views are ignored, any occupied view wins, and a spot is free only if some camera actually sees it. | [`fusion.py`](spotwatch/fusion.py) |
 | One car leaving should be one message. | A per-spot state machine alerts once when a spot turns free and re-arms only after the spot is confirmed taken again. | [`state_machine.py`](spotwatch/state_machine.py) |
 
+The measurements behind the ground point, the mask rules, the model size and the camera-movement check
+are in the [mask-based occupancy design note](docs/segmentation.md).
+
 ## Architecture
 
 ```mermaid
@@ -133,8 +136,9 @@ uv run python -m spotwatch.replay --config config.yaml --camera my-camera --imag
 ```
 
 Check alerts against the pictures. When SpotWatch is wrong, the picture usually shows why: a car hidden
-behind another, a dark car in glare, a spot outline drawn too high. `docs/segmentation.md` has worked
-examples.
+behind another, a dark car in glare, a spot outline drawn too high. The
+[mask-based occupancy design note](docs/segmentation.md) shows how replays like this shaped the spot
+rules and the choice of model.
 
 ## Testing
 
