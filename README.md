@@ -136,6 +136,32 @@ Check alerts against the pictures. When SpotWatch is wrong, the picture usually 
 behind another, a dark car in glare, a spot outline drawn too high. `docs/segmentation.md` has worked
 examples.
 
+## Testing
+
+```
+uv run python -m pytest
+```
+
+The tests never touch a real camera, a GPU or the network. A scripted detector stands in for YOLO, the
+runner is stepped with explicit timestamps, and Blink and Discord calls go through swappable fakes. Some
+of the cases they pin down:
+
+- **Safety rules:** a weak box on a spot reads unknown, not free; a near car's box spilling over a far spot
+  doesn't make it occupied; one car never occupies two spots; a car cut off by the frame edge can't make a
+  spot occupied or free.
+- **Alert behavior:** flapping readings don't spam; a night of unknown readings doesn't re-alert; a spot
+  re-alerts only after it is confirmed taken.
+- **Camera trouble:** a dark or moved frame turns spots unknown; a car driving through doesn't count as
+  the camera moving; a stale or repeated Blink photo is rejected; errors back off and recover; a failed
+  login or a broken notifier never stops the monitor.
+- **Real-world regressions:** [`tests/fixtures/segmentation_cases.json`](tests/fixtures/segmentation_cases.json)
+  holds model outputs and spot outlines recorded from development frames, without the images. They
+  guard known hard cases; they are not an accuracy benchmark.
+
+[CI](.github/workflows/ci.yml) runs the suite on Python 3.11 and 3.12 without installing PyTorch (the
+tests don't need it), pins every action to a commit hash, and scans the full git history for leaked
+secrets with gitleaks.
+
 ## Limits
 
 - **It can only judge what it can see.** A spot hidden behind a parked van, a pole or a passing truck
