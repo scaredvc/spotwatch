@@ -1,0 +1,2067 @@
+{
+ "clip": "pexels-5332686.mp4",
+ "config": "scripts/demo-config.yaml",
+ "model": "yolo11s-seg.pt",
+ "occupancy_mode": "masks",
+ "clip_sha256": "e41b4d07ccb7f282bb6a8c789be21a900506ceb7078fad8eef39af0e2d2802c4",
+ "environment": {
+  "python": "3.12.11",
+  "opencv": "5.0.0",
+  "numpy": "2.5.4",
+  "ultralytics": "8.4.183",
+  "torch": "2.14.1+cpu",
+  "device": "cpu"
+ },
+ "start": 17.0,
+ "end": 32.0,
+ "step": 0.25,
+ "reference_at": 22.0,
+ "polls": [
+  {
+   "clip_seconds": 17.0,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 30 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 17.25,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 30 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 17.5,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 31 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 17.75,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 32 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 18.0,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 33 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 18.25,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 34 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 18.5,
+   "frame_good": false,
+   "frame_reason": "too dark (brightness 36 < 40)",
+   "vehicles": [],
+   "readings": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 18.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.541,
+     "ground_point": [
+      1744,
+      1038
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.419,
+     "ground_point": [
+      950,
+      885
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "unknown",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 19.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.548,
+     "ground_point": [
+      1747,
+      1038
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.316,
+     "ground_point": [
+      954,
+      885
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "unknown"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "unknown"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 19.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.569,
+     "ground_point": [
+      944,
+      885
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.514,
+     "ground_point": [
+      1760,
+      1045
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.235,
+     "ground_point": [
+      1744,
+      1032
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 19.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.703,
+     "ground_point": [
+      1782,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.582,
+     "ground_point": [
+      938,
+      885
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 19.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.716,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.624,
+     "ground_point": [
+      950,
+      888
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 20.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.628,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.612,
+     "ground_point": [
+      938,
+      885
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 20.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.755,
+     "ground_point": [
+      938,
+      885
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.735,
+     "ground_point": [
+      1763,
+      1048
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.547,
+     "ground_point": [
+      2010,
+      962
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.159,
+     "ground_point": [
+      1853,
+      812
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 20.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.726,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.662,
+     "ground_point": [
+      1766,
+      1048
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.539,
+     "ground_point": [
+      2016,
+      965
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.197,
+     "ground_point": [
+      1856,
+      812
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 20.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.742,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.633,
+     "ground_point": [
+      1776,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.507,
+     "ground_point": [
+      2013,
+      962
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.284,
+     "ground_point": [
+      1850,
+      808
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.264,
+     "ground_point": [
+      2022,
+      901
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.212,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 21.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.825,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.702,
+     "ground_point": [
+      1776,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.59,
+     "ground_point": [
+      2013,
+      962
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.264,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 21.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.842,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.776,
+     "ground_point": [
+      1776,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.552,
+     "ground_point": [
+      2006,
+      959
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.247,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 21.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.843,
+     "ground_point": [
+      934,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.772,
+     "ground_point": [
+      1773,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.519,
+     "ground_point": [
+      2006,
+      959
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.213,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 21.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.852,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.791,
+     "ground_point": [
+      1763,
+      1048
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.548,
+     "ground_point": [
+      2003,
+      959
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.208,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 22.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.861,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.794,
+     "ground_point": [
+      1773,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.568,
+     "ground_point": [
+      2003,
+      959
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.207,
+     "ground_point": [
+      1632,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 22.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.862,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.783,
+     "ground_point": [
+      1763,
+      1048
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.598,
+     "ground_point": [
+      2010,
+      959
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.205,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 22.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.863,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.78,
+     "ground_point": [
+      1773,
+      1051
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.629,
+     "ground_point": [
+      2006,
+      959
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.227,
+     "ground_point": [
+      1632,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 22.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.857,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.721,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.271,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 23.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.853,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.717,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.234,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 23.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.85,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.706,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.245,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 23.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.853,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.711,
+     "ground_point": [
+      1776,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.238,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 23.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.852,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.721,
+     "ground_point": [
+      1773,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.234,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 24.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.852,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.724,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.261,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 24.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.851,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.724,
+     "ground_point": [
+      1763,
+      1048
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.3,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 24.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.847,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.711,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.271,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 24.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.855,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.731,
+     "ground_point": [
+      1763,
+      1048
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.254,
+     "ground_point": [
+      1632,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 25.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.855,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.731,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.238,
+     "ground_point": [
+      1632,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 25.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.854,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.707,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.237,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 25.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.854,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.731,
+     "ground_point": [
+      1782,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.217,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 25.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.852,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.704,
+     "ground_point": [
+      1766,
+      1048
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.258,
+     "ground_point": [
+      1632,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 26.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.854,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.72,
+     "ground_point": [
+      1766,
+      1048
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.267,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 26.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.852,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.717,
+     "ground_point": [
+      1763,
+      1048
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.232,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 26.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.854,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.683,
+     "ground_point": [
+      1779,
+      1051
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.259,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "occupied",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 26.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.85,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.193,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": [
+    {
+     "spot": "A",
+     "state": "free"
+    }
+   ]
+  },
+  {
+   "clip_seconds": 27.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.847,
+     "ground_point": [
+      931,
+      882
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.219,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 27.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.844,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.175,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 27.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.845,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.195,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 27.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.848,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "truck",
+     "confidence": 0.226,
+     "ground_point": [
+      1629,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 28.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.849,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.17,
+     "ground_point": [
+      1632,
+      767
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 28.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.848,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 28.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.858,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 28.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.857,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 29.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.862,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 29.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.854,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 29.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.852,
+     "ground_point": [
+      925,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 29.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.844,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 30.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.853,
+     "ground_point": [
+      925,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 30.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.847,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 30.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.829,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 30.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.791,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 31.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.857,
+     "ground_point": [
+      931,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 31.25,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.843,
+     "ground_point": [
+      931,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 31.5,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.85,
+     "ground_point": [
+      928,
+      882
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 31.75,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.874,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.657,
+     "ground_point": [
+      1510,
+      978
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.155,
+     "ground_point": [
+      1354,
+      930
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  },
+  {
+   "clip_seconds": 32.0,
+   "frame_good": true,
+   "frame_reason": "",
+   "vehicles": [
+    {
+     "label": "car",
+     "confidence": 0.866,
+     "ground_point": [
+      928,
+      882
+     ]
+    },
+    {
+     "label": "car",
+     "confidence": 0.624,
+     "ground_point": [
+      1514,
+      981
+     ]
+    }
+   ],
+   "readings": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "states": {
+    "A": "free",
+    "B": "occupied"
+   },
+   "alerts": []
+  }
+ ]
+}

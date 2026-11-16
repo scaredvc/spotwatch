@@ -11,6 +11,15 @@ About once a minute it takes a picture with a Blink camera, finds vehicles with 
 model, and checks each curb spot you've outlined. When a spot turns free, it sends an alert with a photo
 of that spot highlighted.
 
+![SpotWatch on a night-to-day street timelapse: dark frames are rejected, two parked cars are confirmed, one leaves and an alert is sent](docs/images/demo.gif)
+
+*Real SpotWatch output on a stock timelapse:
+[Pexels video 5332686](https://www.pexels.com/video/time-lapse-video-of-a-street-from-nighttime-to-daytime-5332686/)
+by K ([@kelly](https://www.pexels.com/@kelly/)), used under the [Pexels License](https://www.pexels.com/license/).
+Not the author's street. The outline color is what one frame shows; the spot state is SpotWatch's
+decision after enough frames agree, and an alert is sent only when that decision changes to free.
+[How it was made and how to reproduce it](docs/demo.md).*
+
 > **Not affiliated with Amazon or Blink.** SpotWatch talks to Blink through
 > [blinkpy](https://github.com/fronzbot/blinkpy) (MIT), an unofficial library. Blink can change their
 > service at any time and break it.
@@ -162,6 +171,9 @@ of the cases they pin down:
   holds model outputs and spot outlines recorded from development frames, without the images. They
   guard known hard cases; they are not an accuracy benchmark.
 
+The [demo](docs/demo.md) is a manual end-to-end run on real footage (not part of CI): it runs a stock
+clip through the same runner and records every poll's readings and decisions.
+
 [CI](.github/workflows/ci.yml) runs the suite on Python 3.11 and 3.12 without installing PyTorch (the
 tests don't need it), pins every action to a commit hash, and scans the full git history for leaked
 secrets with gitleaks.
@@ -197,3 +209,7 @@ report, blur license plates, faces and house numbers first.
 
 [AGPL-3.0](LICENSE), matching the [Ultralytics](https://github.com/ultralytics/ultralytics) YOLO library
 it uses. See [CONTRIBUTING.md](CONTRIBUTING.md) to help out.
+
+The demo images (`docs/images/demo.gif` and `docs/images/demo-montage.jpg`) are made from
+[Pexels video 5332686](https://www.pexels.com/video/time-lapse-video-of-a-street-from-nighttime-to-daytime-5332686/)
+by K and are used under the [Pexels License](https://www.pexels.com/license/), not AGPL-3.0.
