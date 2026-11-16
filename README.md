@@ -31,18 +31,44 @@ trusted, because a wrong "spot is free" sends you outside for nothing. When in d
 | Two cameras can see the same spot. | Stale and blocked views are ignored, any occupied view wins, and a spot is free only if some camera actually sees it. | [`fusion.py`](spotwatch/fusion.py) |
 | One car leaving should be one message. | A per-spot state machine alerts once when a spot turns free and re-arms only after the spot is confirmed taken again. | [`state_machine.py`](spotwatch/state_machine.py) |
 
-## How it works
+## Architecture
 
-1. **Snapshot.** Ask the Blink camera for a new picture and make sure it really is new (Blink sometimes
-   serves the previous one).
-2. **Quality check.** Reject pictures that are too dark, blurry or glared to trust, and correct for the
-   camera wobbling a few pixels between shots.
-3. **Detect.** Find cars with a YOLO segmentation model. A car occupies the spot where its lowest point
-   (the tire nearest the camera) touches the road.
-4. **Decide.** Each spot reads **free**, **occupied** or **unknown**. Unknown (a car passing in front, a
-   faint detection, a bad picture) never sends an alert. A spot alerts once when it turns free, then
-   stays quiet until it has been taken again.
-5. **Alert.** Print to the console or post to a Discord channel.
+```mermaid
+%%{init: {"flowchart": {"nodeSpacing": 50, "rankSpacing": 36, "curve": "basis"}}}%%
+flowchart TB
+    CAL[/"<b>Calibration</b><br/><small>calibrate.py</small><br/>spot outlines<br/>+ reference frame"/]
+    SRC["<b>1 · Get a frame</b><br/><small>sources.py</small><br/>Blink, image folder, video<br/><i>stale snapshots rejected</i>"]
+    Q(["<b>2 · Quality gate</b><br/><small>quality.py</small><br/>dark? blurry? glare? moved?<br/><i>wobble: outlines re-aligned</i>"])
+    DET["<b>3 · Detect vehicles</b><br/><small>detector.py</small><br/>YOLO11 segmentation"]
+    OCC["<b>4 · Read each spot</b><br/><small>occupancy.py</small><br/>ground point in outline<br/>→ occupied<br/><i>occluded / weak / clipped</i><br/><i>→ unknown</i>"]
+    FUSE["<b>5 · Fuse cameras</b><br/><small>fusion.py</small><br/>any occupied wins<br/><i>stale / blocked ignored</i>"]
+    SM["<b>6 · State machine</b><br/><small>state_machine.py</small><br/>alert once when free<br/>re-arm when taken<br/><i>unknown never alerts</i>"]
+    NOTIFY["<b>Alert</b><br/><small>notifier.py</small><br/>console / Discord<br/>+ photo"]
+    DB[("<b>SQLite log</b><br/><small>storage.py</small>")]
+
+    SRC --> Q
+    CAL -. "outlines" .-> Q
+    Q -- "usable" --> DET --> OCC --> FUSE --> SM
+    Q -. "unusable:<br/>spots unknown" .-> FUSE
+    SM -- "turned free" --> NOTIFY
+    SM -.-> DB
+
+    classDef gate stroke:#d29922,stroke-width:2px
+    classDef out stroke:#3fb950,stroke-width:2px
+    classDef side stroke-dasharray:4 3
+    class Q gate
+    class NOTIFY out
+    class CAL,DB side
+```
+
+[`runner.py`](spotwatch/runner.py) polls each camera on its own interval and updates a spot only after every
+camera due that tick has reported, so one camera can't decide a shared spot on its own. Every snapshot,
+reading, state change and alert is logged to SQLite for checking a run afterwards.
+
+Around the live loop are offline tools that use the same quality gate and spot rules:
+[`calibrate`](spotwatch/calibrate.py) (click the spot outlines), [`check`](spotwatch/check.py) (read one
+frame and save an annotated picture), [`replay`](spotwatch/replay.py) (run saved photos through a config
+with no camera, database writes or alerts) and [`record`](spotwatch/record.py) (save frames to build a test set).
 
 ## Setup
 
