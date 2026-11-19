@@ -14,7 +14,7 @@ frames/
 # YOLO weights
 *.pt
 
-# secrets and sessions (Phase 2)
+# secrets and sessions
 .env
 blink_session.json
 secrets/

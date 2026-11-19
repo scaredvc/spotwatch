@@ -11,6 +11,10 @@ uv run python -m pytest
 
 Run pytest as `python -m pytest` from the repo root so the `spotwatch` package is importable.
 
+`uv sync` also installs `ultralytics` and PyTorch (about 2 GB). The tests replace YOLO with a fake and
+don't need either, so for a quick test-only setup install everything in `requirements.txt` except
+`ultralytics`, as [CI](.github/workflows/ci.yml) does.
+
 ## Before you open a pull request
 
 - Tests pass, and new behaviour has a test. Tests use saved or synthetic frames; they never touch a real camera.
