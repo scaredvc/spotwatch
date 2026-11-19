@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # CI installs from requirements.txt, so this is the file whose bumps the tests actually exercise.
+  # Only blinkpy is tracked: it is an unofficial API pinned on purpose (see spotwatch/blink_source.py).
+  - package-ecosystem: pip
+    directory: /
+    allow:
+      - dependency-name: blinkpy
+    schedule:
+      interval: weekly
+  # Actions are pinned to commit hashes; Dependabot proposes new hashes with the version in the comment.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
